@@ -7,9 +7,32 @@
 //
 
 #import "EWDrawerViewController.h"
+#import <objc/runtime.h>
+
+const char *EWDrawerViewControllerKey = "EWDrawerViewControllerKey";
+
+@implementation UIViewController (EWDrawerViewController)
+
+- (EWDrawerViewController *)drawerController
+{
+    EWDrawerViewController *controller = objc_getAssociatedObject(self, EWDrawerViewControllerKey);
+    if (!controller) {
+        controller = self.parentViewController.drawerController;
+    }
+    
+    return controller;
+}
+
+- (void)setDrawerController:(EWDrawerViewController *)drawerController
+{
+    objc_setAssociatedObject(self, &EWDrawerViewControllerKey, drawerController, OBJC_ASSOCIATION_ASSIGN);
+}
+
+@end
 
 @interface EWDrawerViewController ()
 
+@property(nonatomic, strong) UIViewController *leftViewController;
 @property(nonatomic, strong) UIViewController *centerViewController;
 @property(nonatomic, assign) CGFloat distance;
 @property(nonatomic, assign) CGFloat FullDistance;
@@ -19,10 +42,22 @@
 
 @implementation EWDrawerViewController
 
+@synthesize leftViewController;
 @synthesize centerViewController;
 @synthesize distance;
 @synthesize FullDistance;
 @synthesize Proportion;
+
+- (id)initWithLeftViewController:(UIViewController *)left
+              CenterViewController:(UIViewController *)center
+{
+    if (self = [super init]) {
+        leftViewController = left;
+        centerViewController = center;
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,8 +69,7 @@
     
     [self.view setBackgroundColor:[UIColor yellowColor]];
     
-    centerViewController = [[UIViewController alloc] init];
-    [centerViewController.view setBackgroundColor:[UIColor whiteColor]];
+
     [self.view addSubview:centerViewController.view];
     
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGestureRecognizer:)];

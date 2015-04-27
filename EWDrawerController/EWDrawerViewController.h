@@ -14,3 +14,9 @@
 @interface EWDrawerViewController : UIViewController
 
 @end
+
+@interface UIViewController (EWDrawerViewController)
+
+@property(nonatomic, retain) EWDrawerViewController *drawerController;
+
+@end
