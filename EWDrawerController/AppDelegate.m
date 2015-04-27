@@ -22,7 +22,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    EWDrawerViewController *drawerViewController = [[EWDrawerViewController alloc] init];
+    ViewController *viewController = [[ViewController alloc] init];
+    
+    EWDrawerViewController *drawerViewController = [[EWDrawerViewController alloc]
+                                                    initWithLeftViewController:nil CenterViewController:viewController];
     
     [self.window setRootViewController:drawerViewController];
     [self.window makeKeyAndVisible];

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EWDrawerViewController.h"
 
 @interface ViewController : UIViewController
-
 
 @end
 

@@ -19,4 +19,9 @@
 
 @property(nonatomic, retain) EWDrawerViewController *drawerController;
 
+- (id)initWithLeftViewController:(UIViewController *)left
+            CenterViewController:(UIViewController *)center;
+
+- (void)showLeft;
+
 @end
