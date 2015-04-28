@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BC82E231AEF244D005D0295 /* drawer_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BC82E221AEF244D005D0295 /* drawer_bg.jpg */; };
 		BAF4E1D01AEA83E00022998D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF4E1CF1AEA83E00022998D /* main.m */; };
 		BAF4E1D31AEA83E00022998D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF4E1D21AEA83E00022998D /* AppDelegate.m */; };
 		BAF4E1D61AEA83E00022998D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF4E1D51AEA83E00022998D /* ViewController.m */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3BC82E221AEF244D005D0295 /* drawer_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = drawer_bg.jpg; sourceTree = "<group>"; };
 		BAF4E1CA1AEA83E00022998D /* EWDrawerController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EWDrawerController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF4E1CE1AEA83E00022998D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAF4E1CF1AEA83E00022998D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -61,11 +63,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3BC82E211AEF243D005D0295 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3BC82E221AEF244D005D0295 /* drawer_bg.jpg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		BAF4E1C11AEA83E00022998D = {
 			isa = PBXGroup;
 			children = (
 				BAF4E1CC1AEA83E00022998D /* EWDrawerController */,
 				BAF4E1E61AEA83E00022998D /* EWDrawerControllerTests */,
+				3BC82E211AEF243D005D0295 /* Resources */,
 				BAF4E1CB1AEA83E00022998D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -202,6 +213,7 @@
 			files = (
 				BAF4E1DE1AEA83E00022998D /* LaunchScreen.xib in Resources */,
 				BAF4E1DB1AEA83E00022998D /* Images.xcassets in Resources */,
+				3BC82E231AEF244D005D0295 /* drawer_bg.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

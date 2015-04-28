@@ -27,6 +27,11 @@
     EWDrawerViewController *drawerViewController = [[EWDrawerViewController alloc]
                                                     initWithLeftViewController:nil CenterViewController:viewController];
     
+    UIImageView *bg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"drawer_bg.jpg"]];
+    [bg setContentMode:UIViewContentModeScaleAspectFill];
+    [drawerViewController setBackgroundView:bg];
+    
+    
     [self.window setRootViewController:drawerViewController];
     [self.window makeKeyAndVisible];
     
